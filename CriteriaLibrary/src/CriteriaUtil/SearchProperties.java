@@ -1,3 +1,7 @@
+package CriteriaUtil;
+
+
+public class SearchProperties{
 //Constantes para operacion con atributos de objeto.
 	public static final int RESTRICTION_OPERATION_EQUALS 				= 1;
 	public static final int RESTRICTION_OPERATION_ILIKE 				= 2;
@@ -76,3 +80,4 @@
 		this.restrictionOperation = restrictionOperation;
 	}
 	
+}

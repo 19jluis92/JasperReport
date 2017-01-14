@@ -5,6 +5,19 @@
  */
 package CriteriaUtil;
 
+import java.lang.reflect.Field;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Disjunction;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.internal.CriteriaImpl;
+import org.hibernate.internal.CriteriaImpl.Subcriteria;
+
 /**
  *
  * @author jluis
@@ -260,12 +273,12 @@ public class CriteriaUtilities {
 				case "class java.util.Date": 
 					return SearchProperties.ATTRIBUTE_TYPE_DATE;
 				default:
-					logger.info( "Unknown FieldType " + fieldType + " from field with name " + fieldName + " in the class " + className );
+					System.out.println( "Unknown FieldType " + fieldType + " from field with name " + fieldName + " in the class " + className );
 				break;
 			}
 			
 		}catch (ClassNotFoundException | NoSuchFieldException | SecurityException e) {
-			logger.info( "Can't get FieldType from field with name " + fieldName + " in the class " + className );
+			System.out.println( "Can't get FieldType from field with name " + fieldName + " in the class " + className );
 		}
 
 		
